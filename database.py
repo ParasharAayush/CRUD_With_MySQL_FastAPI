@@ -42,7 +42,7 @@ def fetch_query(connection, query, values = None):
         return None
     
 def create_student(connection,name,age,grade):
-    query = "INSERT INTO students(name,age,grade) VALUES (%s, %d, %s)"
+    query = "INSERT INTO students(name,age,grade) VALUES (%s, %s, %s)"
     values = (name,age,grade)
     execute_query(connection,query,values)
 
@@ -56,7 +56,7 @@ def get_student_by_id(connection,student_id):
     return fetch_query(connection,query,values)
 
 def update_student(connection,student_id,name,age,grade):
-    query = "UPDATE students SET name = %s, age = %d, grade = %s WHERE id = %s"
+    query = "UPDATE students SET name = %s, age = %s, grade = %s WHERE id = %s"
     values = (name,age,grade,student_id)
     execute_query(connection,query,values)
 
